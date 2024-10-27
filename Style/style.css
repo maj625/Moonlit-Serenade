@@ -1,0 +1,137 @@
+/* style.css */
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+}
+
+header {
+    background-color: #0044ff;
+    color: #fff;
+    padding: 20px;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+nav li {
+    float: left;
+}
+
+nav li a {
+    display: block;
+    color: #fff;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+nav li a:hover {
+    background-color: #0044ff;
+}
+
+.hero {
+    background-color: #0044ff;
+    color: #fff;
+    text-align: center;
+    padding: 100px;
+}
+
+.featured-releases, .featured-artists, .about, .contact {
+    padding: 50px;
+    background-color: #fff;
+}
+
+.button {
+    background-color: #0044ff;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+footer {
+    background-color: #0044ff;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+}
+
+/* style.css */
+
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+}
+
+/* Header Styles */
+header {
+    background-color: #0044ff;
+    color: #fff;
+    padding: 20px;
+}
+
+/* Navigation Bar Styles */
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+nav li {
+    float: left;
+}
+
+nav li a {
+    display: block;
+    color: #fff;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+nav li a:hover {
+    background-color: #002d7a;
+}
+
+/* Releases Page Style */
+
+.releases {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.release-card {
+    width: 30%;
+    margin-bottom: 20px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.release-card img {
+    max-width: 100%;
+    height: auto;
+}
+
+.release-card a {
+    display: inline-block;
+    background-color: #0044ff;
+    color: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+}
