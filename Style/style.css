@@ -12,6 +12,10 @@ header {
     padding: 20px;
 }
 
+header h2 {
+    padding: 0 16px;
+}
+
 nav ul {
     list-style-type: none;
     margin: 0;
@@ -30,10 +34,18 @@ nav li a {
     border-radius: 8px;
     padding: 14px 16px;
     text-decoration: none;
+    border: 1px solid transparent;
 }
 
 nav li a:hover {
     border: 1px solid #fff;
+    transform: scale(1.5);
+    padding: 16px 8px;
+    margin-left: 8px;
+    background: linear-gradient(black, red);
+    -webkit-background-clip: text;
+            background-clip: text;
+    -webkit-text-fill-color: transparent;
     transition: ease 1s;
 }
 
@@ -46,6 +58,7 @@ nav li a:hover {
 .hero h1 { 
     font-size: 50px;
     background: linear-gradient(black, red);
+    font-family: Georgia, 'Times New Roman', Times, serif;
     -webkit-background-clip: text;
             background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -64,13 +77,9 @@ nav li a:hover {
 }
 
 .hero a:hover {
-    background: linear-gradient(var(--myColor1), var(--myColor2));
-    transition: --myColor1 3s, --myColor2 3s;
-    /* background: linear-gradient(var(--myRed), var(--myBlue));
-    border: 1px solid rgb(255, 0, 0);
+    border: 3px solid rgb(255, 0, 0);
     border-radius: 30px;
-    transition: --myRed 2s, --myBlue 2s;
-    transition: linear 2s;   */
+    transition: ease 0.3s;  
 }
 
 .featured-releases, .featured-artists, .about, .contact {
@@ -106,6 +115,10 @@ nav li a:hover {
     animation: scroll 20s linear infinite;
 }
 
+.inner_scroller .release-card {
+    flex: 0 0 200px;
+}
+
 .button {
     color: #fff;
     padding: 10px 20px;
@@ -114,15 +127,10 @@ nav li a:hover {
     text-decoration: none;
 }
 
-footer {
-    background-color: #0044ff;
-    color: #fff;
-    text-align: center;
-    padding: 20px;
-}
-
 /* Releases Page Style */
 .releases {
+    margin: 0 20px;
+    padding: 20px;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -151,16 +159,41 @@ footer {
     border-radius: 5px;
 }
 
+footer {
+    background-color: #0044ff;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+}
+
+
 /* ============================================
                 Animations
 =============================================== */
 
 @keyframes fade-in {
+    from{
+        transform: scale(0.5);
+    }
     50% {
         opacity: 1;
+        transform: scale(1);
     }
     75% {
         opacity: 0;
+        transform: scale(0.5);
+    }
+}
+
+@keyframes zoom-in {
+    from {
+        transform: scale(0.1);
+    }
+    35% {
+        transform: scale(1);
+    }
+    90% {
+        transform: scale(0.8);
     }
 }
 
