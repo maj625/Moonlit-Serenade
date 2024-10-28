@@ -4,12 +4,11 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f0f0f0;
+    background-image: linear-gradient(90deg, #020024 0%, #090979 35%, #021316 100%);
 }
 
 header {
-    background-color: #0044ff;
-    color: #fff;
+    color: #ffffff;
     padding: 20px;
 }
 
@@ -26,30 +25,88 @@ nav li {
 
 nav li a {
     display: block;
-    color: #fff;
+    color: white;
     text-align: center;
+    border-radius: 8px;
     padding: 14px 16px;
     text-decoration: none;
 }
 
 nav li a:hover {
-    background-color: #0044ff;
+    border: 1px solid #fff;
+    transition: ease 1s;
 }
 
 .hero {
-    background-color: #0044ff;
-    color: #fff;
+    font-size: 30px;
     text-align: center;
-    padding: 100px;
+    padding: 50px 100px 150px 100px;
+}
+
+.hero h1 { 
+    font-size: 50px;
+    background: linear-gradient(black, red);
+    -webkit-background-clip: text;
+            background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hero p { 
+    background: linear-gradient(red, black);
+    -webkit-background-clip: text;
+            background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hero a {
+    border: 1px solid white;
+    border-radius: 30px;
+}
+
+.hero a:hover {
+    background: linear-gradient(var(--myColor1), var(--myColor2));
+    transition: --myColor1 3s, --myColor2 3s;
+    /* background: linear-gradient(var(--myRed), var(--myBlue));
+    border: 1px solid rgb(255, 0, 0);
+    border-radius: 30px;
+    transition: --myRed 2s, --myBlue 2s;
+    transition: linear 2s;   */
 }
 
 .featured-releases, .featured-artists, .about, .contact {
+    opacity: 0;
     padding: 50px;
-    background-color: #fff;
+    color: #fff;
+    animation: fade-in linear;
+    animation-timeline: view();
+    animation-range-start: 100px;
+}
+
+.h_scroller {
+    max-width: 700px;
+    justify-self: center;
+}
+
+.h_scroller[data-animated=true] {
+    overflow: hidden;
+    -webkit-mask: linear-gradient(90deg, transparent, white 20%, white 80%, transparent);
+    mask: linear-gradient(90deg, transparent, white 20%, white 80%, transparent);
+}
+
+.inner_scroller {
+    max-width: max-content;
+    padding-block: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+[data-animated=true] .inner_scroller {
+    flex-wrap: nowrap;
+    animation: scroll 20s linear infinite;
 }
 
 .button {
-    background-color: #0044ff;
     color: #fff;
     padding: 10px 20px;
     border: none;
@@ -64,49 +121,7 @@ footer {
     padding: 20px;
 }
 
-/* style.css */
-
-/* General Styles */
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f0f0f0;
-}
-
-/* Header Styles */
-header {
-    background-color: #0044ff;
-    color: #fff;
-    padding: 20px;
-}
-
-/* Navigation Bar Styles */
-nav ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-}
-
-nav li {
-    float: left;
-}
-
-nav li a {
-    display: block;
-    color: #fff;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-}
-
-nav li a:hover {
-    background-color: #002d7a;
-}
-
 /* Releases Page Style */
-
 .releases {
     display: flex;
     flex-wrap: wrap;
@@ -114,7 +129,7 @@ nav li a:hover {
 }
 
 .release-card {
-    width: 30%;
+    width: 25%;
     margin-bottom: 20px;
     padding: 20px;
     border: 1px solid #ccc;
@@ -134,4 +149,23 @@ nav li a:hover {
     padding: 10px 20px;
     text-decoration: none;
     border-radius: 5px;
+}
+
+/* ============================================
+                Animations
+=============================================== */
+
+@keyframes fade-in {
+    50% {
+        opacity: 1;
+    }
+    75% {
+        opacity: 0;
+    }
+}
+
+@keyframes scroll {
+    to{
+        transform: translate(calc(-50% - 0.5rem));
+    }
 }
