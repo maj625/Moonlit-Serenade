@@ -140,6 +140,15 @@ nav li a:hover {
     font-size: 20px;
 }
 
+.featured-releases .release-card {
+    width: 20%;
+}
+
+.featured-releases {
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
 .button {
     color: #fff;
     padding: 10px 20px;
@@ -169,15 +178,16 @@ nav li a:hover {
     padding: 20px;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: space-evenly;
+    color: #fff;
 }
 
 .release-card {
-    width: 25%;
+    width: 20%;
     margin-bottom: 20px;
     padding: 20px;
     border: 1px solid #ccc;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 4px rgba(255, 255, 255, 0.1);
     text-align: center;
 }
 
