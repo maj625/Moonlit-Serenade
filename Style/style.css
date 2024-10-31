@@ -1,14 +1,29 @@
 /* style.css */
 
+html {
+    scroll-snap-type: y mandatory;
+}
+
 body {
+    background: 
+    linear-gradient(rgba(0,0,0,0.68),rgba(0,0,0,0.68),rgba(0,0,0,0.68),rgba(0,0,0,0)),
+    url(../Assets/couple-sitting-bench-under-full-moon-327620117.webp)no-repeat;
+    background-size: cover;
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-image: linear-gradient(90deg, #020024 0%, #090979 35%, #021316 100%);
+}
+
+section {
+    scroll-snap-align: start;
+    min-block-size: 100vh;
+    scroll-snap-stop: always;
 }
 
 header {
+    scroll-snap-align: start;
     color: #ffffff;
+    scroll-snap-stop: always;  
     padding: 20px;
 }
 
@@ -24,7 +39,15 @@ nav ul {
 }
 
 nav li {
-    float: left;
+    float: right;
+}
+
+nav li img {
+    width: 200px;
+    height: 100px;
+    margin-top: -20px;
+    position: absolute;
+    left: 0;
 }
 
 nav li a {
@@ -52,20 +75,21 @@ nav li a:hover {
 .hero {
     font-size: 30px;
     text-align: center;
-    padding: 50px 100px 150px 100px;
+    padding: 50px 100px 0px 100px;
 }
 
 .hero h1 { 
     font-size: 50px;
-    background: linear-gradient(black, red);
+    background: linear-gradient(rgb(255, 255, 255), rgb(255, 255, 255));
     font-family: Georgia, 'Times New Roman', Times, serif;
     -webkit-background-clip: text;
             background-clip: text;
     -webkit-text-fill-color: transparent;
+    filter: drop-shadow(0 0 0.75rem crimson);
 }
 
 .hero p { 
-    background: linear-gradient(red, black);
+    background: linear-gradient(rgb(255, 255, 255), rgb(255, 255, 255));
     -webkit-background-clip: text;
             background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -74,49 +98,46 @@ nav li a:hover {
 .hero a {
     border: 1px solid white;
     border-radius: 30px;
+    position: relative;
+    padding: 15px  20px;
+    background-color: #000000;
+}
+
+.hero a::before, .hero a::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: conic-gradient(from var(--gradient-angle), 
+    red, transparent, transparent, transparent, white, transparent, transparent, transparent, red);
+    border-radius: inherit;
+    z-index: -1;
+    animation: rotation 20s linear infinite;
+}
+
+.hero a::after{
+    filter: blur(1.5rem);
 }
 
 .hero a:hover {
-    border: 3px solid rgb(255, 0, 0);
-    border-radius: 30px;
+    background-color: crimson;
     transition: ease 0.3s;  
 }
 
 .featured-releases, .featured-artists, .about, .contact {
     opacity: 0;
     padding: 50px;
+    margin-top: 30px;
     color: #fff;
     animation: fade-in linear;
     animation-timeline: view();
-    animation-range-start: 100px;
 }
 
-.h_scroller {
-    max-width: 700px;
-    justify-self: center;
+.featured-releases, .featured-artists, .about, .contact h1 {
+    font-size: 40px;
 }
 
-.h_scroller[data-animated=true] {
-    overflow: hidden;
-    -webkit-mask: linear-gradient(90deg, transparent, white 20%, white 80%, transparent);
-    mask: linear-gradient(90deg, transparent, white 20%, white 80%, transparent);
-}
-
-.inner_scroller {
-    max-width: max-content;
-    padding-block: 1rem;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
-}
-
-[data-animated=true] .inner_scroller {
-    flex-wrap: nowrap;
-    animation: scroll 20s linear infinite;
-}
-
-.inner_scroller .release-card {
-    flex: 0 0 200px;
+.featured-releases, .featured-artists, .about, .contact p{
+    font-size: 20px;
 }
 
 .button {
@@ -125,6 +146,21 @@ nav li a:hover {
     border: none;
     border-radius: 5px;
     text-decoration: none;
+}
+
+/* Featured Artists */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columns */
+    gap: 10px; /* Space between images */
+    justify-items: center;
+    width: 100%;
+    max-height: 100vh; /* Maximum width of the gallery */
+}
+
+.gallery img {
+    height: 200px;
+    border-radius: 8px; /* Optional: Adds rounded corners */
 }
 
 /* Releases Page Style */
@@ -160,7 +196,11 @@ nav li a:hover {
 }
 
 footer {
-    background-color: #0044ff;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    margin-left: -50px;
+    background: linear-gradient(transparent 60%, blue 50%);
     color: #fff;
     text-align: center;
     padding: 20px;
@@ -168,20 +208,85 @@ footer {
 
 
 /* ============================================
+                Submition Form
+=============================================== */
+
+.musicSubmition {
+    padding-left: 50px;
+}
+
+.musicSubmition h1 {
+    margin-top: 50px;
+    font-size: 40px;
+    color: #fff;
+  }
+  
+.musicSubmition p {
+    margin-top: 20px;
+    color: #fff;
+  }
+  
+.musicSubmition .container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 50px;
+    justify-content: space-evenly;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  input[type="text"],
+  input[type="email"],
+  textarea {
+    width: 300px;
+    padding: 15px 10px;
+    margin: 15px 0;
+    border-radius: 8px;
+    border: none;
+    background-color: #5c5656;
+    opacity: 0.7;
+  }
+  
+  .musicSubmition button {
+    width: 40%;
+    background-color: white;
+    color: black;
+    margin: 15px 0;
+    padding: 15px 20px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+  }
+
+  .musicSubmition button:hover {
+    border: 1px solid rgb(129, 113, 113);
+    transform: scale(1.1);
+    transition: 0.5s;
+  }
+  
+  .musicSubmition img {
+    max-width: 100%;
+    height: auto;
+    box-shadow: white 7px;
+    border-radius: 6px;
+    filter: drop-shadow(0 0 0.75rem crimson);
+  }
+
+
+/* ============================================
                 Animations
 =============================================== */
 
 @keyframes fade-in {
-    from{
-        transform: scale(0.5);
-    }
-    50% {
+    20% {
         opacity: 1;
-        transform: scale(1);
     }
     75% {
         opacity: 0;
-        transform: scale(0.5);
     }
 }
 
@@ -200,5 +305,20 @@ footer {
 @keyframes scroll {
     to{
         transform: translate(calc(-50% - 0.5rem));
+    }
+}
+
+@property --gradient-angle {
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+}
+
+@keyframes rotation {
+    0%{
+        --gradient-angle: 0deg;
+    }
+    100%{
+        --gradient-angle: 360deg;
     }
 }

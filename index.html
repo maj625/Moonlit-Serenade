@@ -3,17 +3,21 @@
 <head>
     <title>Moonlit Serenade</title>
     <link rel="stylesheet" href="./Style/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kulim+Park&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
         <nav>
             <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="./Pages/releases.html">Releases</a></li>
-                <li><a href="#">Artists</a></li>
-                <li><a href="#">Blog</a></li>
-                <li><a href="#contact-us">Contact</a></li>
                 <li><a href="#about-us">About</a></li>
+                <li><a href="#contact-us">Contact</a></li>
+                <li><a href="#">Blog</a></li>
+                <li><a href="#">Artists</a></li>
+                <li><a href="./Pages/releases.html">Releases</a></li>
+                <li><a href="#">Home</a></li>
+                <li><img class="logo" src="./Assets/Moonlit Serenade Logo (WHITE).png" alt="Logo"></li>
             </ul>
         </nav>
     </header>
@@ -21,27 +25,27 @@
     <section class="hero">
         <h1>Moonlit Serenade</h1>
         <p>Your Home for Lo-Fi Music And Breaking Into Music Industry</p>
-        <a href="#" class="button">Submit Your Music</a>
+        <a href="#musicSubmit" class="button">Submit Your Music</a>
     </section>
 
     <section class="featured-releases">
         <h2>Featured Releases</h2>
         <div class="h_scroller">
-            <div class="inner_scroller">
+            <div class="releases">
                 <div class="release-card">
-                    <img src="./Pages/release_cover.jpg" alt="Release Cover">
+                    <img src="./Assets/Mello - Echoes of Memories Cover Art.jpg" alt="Release Cover">
                     <h3>Release Title</h3>
                     <p>Artist Name</p>
                     <a href="release_page.html">Listen Now</a>
                 </div>
                 <div class="release-card">
-                    <img src="./Pages/release_cover.jpg" alt="Release Cover">
+                    <img src="./Assets/Mello - Feeling Good Cover Art.png" alt="Release Cover">
                     <h3>Release Title</h3>
                     <p>Zulqarnain</p>
                     <a href="release_page.html">Listen Now</a>
                 </div>
                 <div class="release-card">
-                    <img src="./Pages/release_cover.jpg" alt="Release Cover">
+                    <img src="./Assets/Mello - Reflections Cover Art.jpg" alt="Release Cover">
                     <h3>Release Title</h3>
                     <p>Zulqarnain</p>
                     <a href="release_page.html">Listen Now</a>
@@ -52,7 +56,32 @@
 
     <section class="featured-artists">
         <h2>Featured Artists</h2>
-        </section>
+        <div class="gallery">
+            <img src="./Assets/classic.jpeg" alt="Image 1">
+            <img src="./Assets/smooth.jpeg" alt="Image 2">
+            <img src="./Assets/sony.jpeg" alt="Image 3">
+            <img src="./Assets/smoothsinger.jpeg" alt="Image 4">
+            <img src="./Assets/rihanna.jpeg" alt="Image 5">
+            <img src="./Assets/popsinger.jpeg" alt="Image 6">
+        </div>
+    </section>
+
+    <section id="musicSubmit" class="musicSubmition">
+        <h1>SUBMIT YOUR MUSIC</h1>
+        <p>Looking to get on our channels or release music with us through one of our record labels? Submit it here.</p>
+
+        <div class="container">
+        <img src="./Assets/glowing-shiny.avif" alt="Trap Nation Logo">
+
+        <form>
+            <input type="text" placeholder="https://www.examplelink.com" required>
+            <input type="text" placeholder="My Name Is here" required>
+            <input type="email" placeholder="examplemail@gmail.com" required>
+            <input type="text" placeholder="https://www.MyTiktok.tiktok.com" required>
+            <button type="submit">SUBMIT</button>
+        </form>
+        </div>
+    </section>
 
     <section id="about-us" class="about">
         <h2>About Us</h2>
@@ -76,12 +105,10 @@
         <p>Email: moonlitserenade@example.com</p>
         <p>Ph: 0123456789</p>
         <p>Social media: [Links to your social media profiles]</p>
-        <p>Address: XYZ, at ABC</p>
+        <footer>
+            <p>&copy; 2023 Moonlit Serenade</p>
+        </footer>
     </section>
-
-    <footer>
-        <p>&copy; 2023 Moonlit Serenade</p>
-    </footer>
     <script src="./Js/main.js"></script>
 </body>
 </html>
